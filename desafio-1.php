@@ -43,6 +43,6 @@ if ($subtotalCompra >= 100000000) {
 }
 
 
-echo "Subtotal da Compra: R$" . number_format($subtotalCompra, 2, ',', '.') . "<br>";
+echo "Subtotal da compra: R$" . number_format($subtotalCompra, 2, ',', '.') . "<br>";
 echo "Desconto".($desconto<=0?" não" : "") ." aplicado (10%): R$" . number_format($desconto, 2, ',', '.') . "<br>";
 echo "Total final a pagar: R$" . number_format($totalFinal, 2, ',', '.');
