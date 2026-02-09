@@ -16,11 +16,11 @@ $alunos = [
 ];
 
 usort($alunos, function ($menorNota, $maiorNota) {
-    return $maiorNota['nota'] <=> $menorNota['nota'];
+    return $maiorNota["nota"] <=> $menorNota["nota"];
 });
 
 $somaNotas = 0;
-foreach ($alunos as $aluno){
+foreach ($alunos as $aluno) {
     $somaNotas += $aluno["nota"];
 }
 
@@ -39,18 +39,22 @@ $media = $somaNotas / count($alunos)
 </head>
 
 <body>
+
     <table border="1" cellpadding="8" cellspacing="0">
         <tr>
             <th> Nome </th>
             <th> Idade </th>
             <th> Nota </th>
+
         </tr>
 
         <?php foreach ($alunos as $listaAlunos) : ?>
+
             <tr>
                 <td> <?= $listaAlunos["nome"] ?> </td>
                 <td> <?= $listaAlunos["idade"] ?> </td>
                 <td> <?= $listaAlunos["nota"] ?> </td>
+
             </tr>
         <?php endforeach; ?>
 
