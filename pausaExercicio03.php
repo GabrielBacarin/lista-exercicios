@@ -45,17 +45,24 @@ $media = $somaNotas / count($alunos)
             <th> Nome </th>
             <th> Idade </th>
             <th> Nota </th>
+            <th> Situação </th>
 
         </tr>
 
         <?php foreach ($alunos as $listaAlunos) : ?>
 
-            <tr>
-                <td> <?= $listaAlunos["nome"] ?> </td>
-                <td> <?= $listaAlunos["idade"] ?> </td>
-                <td> <?= $listaAlunos["nota"] ?> </td>
+            <?php
+            $status = $listaAlunos['nota'] >= 7 ? 'Aprovado' : 'Reprovado';
+            $corLinha = $listaAlunos['nota'] < 7 ? '#FFCDD2' : '';
+            ?>
 
+            <tr bgcolor="<?= $corLinha ?>">
+                <td><?= $listaAlunos["nome"] ?></td>
+                <td><?= $listaAlunos["idade"] ?></td>
+                <td><?= $listaAlunos["nota"] ?></td>
+                <td><?= $status ?></strong></td>
             </tr>
+
         <?php endforeach; ?>
 
     </table>
