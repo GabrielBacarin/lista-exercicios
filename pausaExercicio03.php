@@ -15,6 +15,18 @@ $alunos = [
     ["nome" => "Mariana", "idade" => 18, "nota" => 9.4],
 ];
 
+usort($alunos, function ($menorNota, $maiorNota) {
+    return $maiorNota['nota'] <=> $menorNota['nota'];
+});
+
+$somaNotas = 0;
+foreach ($alunos as $aluno){
+    $somaNotas += $aluno["nota"];
+}
+
+$media = $somaNotas / count($alunos)
+
+
 ?>
 
 <!DOCTYPE html>
@@ -43,6 +55,8 @@ $alunos = [
         <?php endforeach; ?>
 
     </table>
+
+    <p>Média da turma: <?= number_format($media, 2, ',', '.') ?></p>
 
 </body>
 
